@@ -50,7 +50,7 @@ The bootcamp includes several projects designed to help you practice and apply y
 |Projects| Links     |
 |--------|------|
 |[Week 1](/Week1/)| <li>[Area of shape](Week1/Day2/Project/Area.java)</li> <li>[Positive or Negative number](Week1/Day2/Project/PositiveOrNegative.java)</li> <li>[Simple login program using java](Week1/Day2/Project/SimpleLogin.java)</li> <li>[Simple login program using python](Week1/Day2/Project/pythonLogin.py)</li> <li>[Login program using classes, objects and methods](/Week1/Day3/Project/LoginSystemUsingClassAndObjects.java)</li> <li>[A complete login system implemented with OOP principals, well comments, data stored in file system with java and more.](/Week1/Day4/Project/)</li> |
-|[Week 2](/Week2/)| <li>[Todos list with JavaScript](/Week2/Day1/Project/ToDoList.html)</li> <li>[Quick start project with JavaScript falvours](/Week2/Day2/Project/usestate-example/)</li> |
+|[Week 2](/Week2/)| <li>[Todos list with JavaScript](/Week2/Day1/Project/)</li> <li>[Quick start project with JavaScript falvours](/Week2/Day2/Project/)</li> |
 
 
 
