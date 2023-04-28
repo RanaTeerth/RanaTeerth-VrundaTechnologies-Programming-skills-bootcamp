@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Dos List using JS</title>
+
+    <!-- Bootstrap  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap end -->
+
+    <style>
+      .completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar starts -->
+    <nav class="navbar bg-body-tertiary bg-dark d-flex" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">Ishan's To-Dos List</a>
+        <form role="search">
+          <input
+            id="filter-items"
+            class="form-control form-control-lg"
+            type="search"
+            placeholder="Search your tasks here"
+            aria-label="Search"
+          />
+          <!-- <button class="btn btn-outline-primary" type="submit">Search</button> -->
+        </form>
+      </div>
+    </nav>
+    <!-- nav bar ends -->
+
+    <!-- main body starts -->
+    <div class="card m-4">
+      <div class="card-body">
+        <fieldset>
+          <legend>Add tasks</legend>
+          <div class="InputArea mt-5">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="task-number">#1</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Task title"
+                id="task-title"
+              />
+            </div>
+
+            <button type="button" id="btn-add" class="btn btn-primary">
+              Add
+            </button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="card m-4">
+      <div class="card-body">
+        <fieldset>
+          <legend>Tasks</legend>
+          <hr />
+          <div id="tasks-container" class="list-group tasks-container-style">
+            <div class="list-group-item list-group-item-action">No tasks</div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <!-- main body ends -->
+
+    <!-- footer starts -->
+    <footer class="bg-dark text-center text-white footer fixed-bottom">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Ishan's Todos List
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- footer ends -->
+
+    <!-- main javascript code starts -->
+    <script>
+      // tasks list to store all the tasks
+      let tasks = [];
+
+      // references to the input variables
+      const taskTitle = document.getElementById("task-title");
+      const addTaskBtn = document.getElementById("btn-add");
+      const filterItems = document.getElementById("filter-items");
+      const tasksContainer = document.getElementById("tasks-container");
+      const taskNumberInInput = document.getElementById("task-number");
+
+      /*
+       * below event listner on the addTaskBtn will add a task in the list
+       */
+      addTaskBtn.addEventListener("click", () => {
+        const title = taskTitle.value;
+
+        // when something is in the input field then only we have to add it in the list
+        if (title !== "") {
+          // if not null then and then only we have to add that task
+          tasks.push({
+            name: title,
+            taskCompleted: false,
+          });
+
+          // after adding in the list resetting the input field to prevent repetation of tasks
+          taskTitle.value = "";
+
+          // calling the updateList method to update the list
+          updateList();
+        }
+      });
+
+      // adding event listener to the filterItems which will call updateList() method on every input change in the field
+      filterItems.addEventListener("input", () => {
+        updateList();
+      });
+
+
+      // updateList() method -> updates the list according to the input of the user
+      const updateList = () => {
+        // clearing the task container
+        tasksContainer.innerHTML = "";
+
+        // obtaining all the filtered items as per the input in the search input tag
+        const filteredItems = tasks.filter((item) =>
+          item.name.toLowerCase().includes(filterItems.value.toLowerCase())
+        );
+
+        // now iterating through all the filteredItems we got
+        filteredItems.forEach((item, index) => {
+          // creating the listitem li element
+          const listItem = document.createElement("li");
+
+          // adding the prefix to with the task name
+          listItem.innerText = index + 1 + ". " + item.name;
+
+          // adding the completed class name based on the boolean taskCompleted status
+          if (item.taskCompleted) {
+            listItem.classList.add("completed");
+          } else {
+            listItem.classList.remove("completed");
+          }
+
+          // setting the attribute as index to the listitem
+          listItem.setAttribute("data-task-index", index);
+
+          // creating the task complete button
+          const taskCompleteBtn = document.createElement("button");
+          taskCompleteBtn.innerText = "Completed";
+
+          // adding the onClick event listener
+          taskCompleteBtn.addEventListener("click", () => {
+            tasks[index].taskCompleted = !tasks[index].taskCompleted;
+
+            updateList();
+          });
+
+          const completeButton = document.createElement("button");
+          // if false it means the task is not still completed
+          if (tasks[index].taskCompleted === false) {
+            completeButton.innerText = "Completed";
+          } else {
+            // if true it means the task is completed
+            completeButton.innerText = "Not completed";
+          }
+
+          completeButton.addEventListener("click", () => {
+            tasks[index].taskCompleted = !tasks[index].taskCompleted;
+
+            updateList();
+          });
+
+          // edit button in list item to edit any existing task
+          const editButton = document.createElement("button");
+          editButton.innerText = "Edit";
+
+          editButton.addEventListener("click", () => {
+            // storing the old name
+            const prevName = tasks[index];
+
+            // obtaining the new name from the user
+            const newName = prompt(
+              "Enter the new task name for the " + prevName + " task."
+            );
+
+            // if valid name provided then and then only save the changes
+            if (newName !== "" && newName.trim() !== "") {
+              tasks[index].name = newName;
+
+              updateList();
+            }
+          });
+
+          // add delete button in list item to delete any tasks
+          const deleteButton = document.createElement("button");
+          deleteButton.innerText = "Delete";
+
+          // adding the event listner to the delete button on click
+          deleteButton.addEventListener("click", () => {
+            /*
+             * Here two arguements are there:
+             * - first arguement states the element index to be deleted
+             * - second arguement states number of elements to be deleted from the specified index in the first arguement
+             */
+            tasks.splice(index, 1);
+
+            updateList();
+
+            // putting this condition because when we are deleting the very last element of the tasks list then the list will not be updated.
+            if (tasks.length === 0) {
+              // resetting the task number
+              taskNumberInInput.innerText = "#1";
+
+              // adding the default no task list item in the list once the tasks list becomes empty
+              listItem.classList.remove("completed");
+              listItem.classList.add("list-group-item");
+              listItem.classList.add("list-group-item-action");
+              listItem.innerText = "No tasks";
+              tasksContainer.appendChild(listItem);
+            }
+          });
+
+          // bootstrap class for making list item looks simple and clean
+          completeButton.classList.add("btn-success");
+          completeButton.classList.add("btn-sm");
+
+          editButton.classList.add("btn");
+          editButton.classList.add("btn-primary");
+          editButton.classList.add("btn-sm");
+
+          deleteButton.classList.add("btn");
+          deleteButton.classList.add("btn-danger");
+          deleteButton.classList.add("btn-sm");
+
+          listItem.classList.add("list-group-item");
+          listItem.classList.add("list-group-item-action");
+          listItem.classList.add("d-flex");
+          listItem.classList.add("justify-content-between");
+
+          // appending the buttons in the listitem
+          listItem.appendChild(completeButton);
+          listItem.appendChild(editButton);
+          listItem.appendChild(deleteButton);
+
+          // adding the list item in the tasksContainer containing all the tasks
+          tasksContainer.appendChild(listItem);
+
+          taskNumberInInput.innerText = "#" + (tasks.length + 1);
+        });
+      };
+    </script>
+    <!-- main javascript code ends -->
+  </body>
+</html>
