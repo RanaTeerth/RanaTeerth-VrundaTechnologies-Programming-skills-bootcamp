@@ -42,16 +42,18 @@ This repository contains code examples for different programming languages and c
 |----------|--------|
 | [Week 1](/Week1/) |<li>[Day 1 - Orientation and Commencement](README.md)</li><li>[Day 2 - Fundamentals of Programming](/Week1/Day2/)</li><li>[Day 3 - Introduction to Java](/Week1/Day3/)</li><li>[Day 4 - Intermediate Java](/Week1/Day4/)</li><li>[Day 5 - Advanced Java](/Week1/Day5/)</li>|
 |[Week 2](/Week2/)|<li>[Day 1 - Introduction to JavaScript](/Week2/Day1/)</li><li>[Day 2 - Flavors of JavaScript](/Week2/Day2/)</li><li>[Day 3 - Introduction to Modern Languages](/Week2/Day3/)</li><li>[Day 4 - GitHub Portfolio and Project Showcasing](/Week2/Day4/)</li><li>[Day 5 - Project Development - Java](/Week2/Day5/)</li>|
+|[Week 3](/Week3/)|<li>[Day 1 - Discussion and Q/A](/Week3/)</li><li>[Day 2 - Project Development - Flavors of JavaScript](/Week3/README.md)</li>|
+
 
 ## Projects
 
 The bootcamp includes several projects designed to help you practice and apply your programming skills. Each project includes a set of requirements and instructions for completing it. You can find the projects in the projects folder of this repository.
 
-|Projects| Links     |
-|--------|------|
+|Projects| Links |
+|--------|------ |
 |[Week 1](/Week1/)| <li>[Area of shape](Week1/Day2/Project/Area.java)</li> <li>[Positive or Negative number](Week1/Day2/Project/PositiveOrNegative.java)</li> <li>[Simple login program using java](Week1/Day2/Project/SimpleLogin.java)</li> <li>[Simple login program using python](Week1/Day2/Project/pythonLogin.py)</li> <li>[Login program using classes, objects and methods](/Week1/Day3/Project/LoginSystemUsingClassAndObjects.java)</li> <li>[A complete login system implemented with OOP principals, well comments, data stored in file system with java and more.](/Week1/Day4/Project/)</li> |
 |[Week 2](/Week2/)| <li>[Todos list with JavaScript](/Week2/Day1/Project/)</li> <li>[Quick start project with JavaScript falvours](/Week2/Day2/Project/)</li><li>[Library Management System using java](/Week2/Day5/)</li> |
-
+|[Week 3](/Week3/)|<li>[Weather App using OpenWeatherMap API](/Week3/Day2/)</li>|
 
 
 ## Contributing

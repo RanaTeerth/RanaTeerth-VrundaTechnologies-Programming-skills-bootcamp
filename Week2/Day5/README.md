@@ -1,7 +1,7 @@
 # Library Management System
 
 ## Demo
-@todo: add the demo of this project
+https://user-images.githubusercontent.com/108181763/236619913-f2d9a0dc-77d6-4608-a32d-86271de9b4b2.mp4
 
 ## Overview
 
