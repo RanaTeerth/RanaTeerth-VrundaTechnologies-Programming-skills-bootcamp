@@ -5,7 +5,7 @@
 In this project, we will be building a news app using Flutter. The app will allow users to browse and read news articles from different categories such as sports, politics, entertainment, etc. We will be using the News API to fetch news articles in real-time.
 
 ## Demo
-@todo: add the demo of the project here
+https://user-images.githubusercontent.com/108181763/236677882-ba3a4409-ebf3-4bfd-a4e8-e6459abea27a.mp4
 
 ## Features
 
