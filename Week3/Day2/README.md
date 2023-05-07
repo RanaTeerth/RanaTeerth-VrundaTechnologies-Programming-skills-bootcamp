@@ -3,7 +3,7 @@
 This project is a weather application that provides current weather information for a given location.
 
 ## Demo
-@todo: to add the demo video here
+https://user-images.githubusercontent.com/108181763/236659969-4f278396-1a31-48a2-9282-7f14cd15756b.mp4
 
 ## Technologies Used
 

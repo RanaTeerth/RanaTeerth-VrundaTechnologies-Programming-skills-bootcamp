@@ -11,7 +11,6 @@ The Library Management System is a software application that is designed to mana
 
 The Library Management System provides the following features:
 
-```
 * Add new books to the library catalog
 * Remove books from the library catalog
 * Update book information (title, author, genre, etc.)
@@ -20,7 +19,6 @@ The Library Management System provides the following features:
 * Borrow a book
 * Return a book
 * View the list of borrowed books
-```
 
 ## Classes
 
