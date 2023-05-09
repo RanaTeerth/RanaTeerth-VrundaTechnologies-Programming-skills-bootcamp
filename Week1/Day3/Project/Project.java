@@ -11,7 +11,7 @@ class LoginSystem { // Create a class named LoginSystem.
     // Define a method named setCredentials that initializes data members: email and password. The method should initialize the fields with the provided values.
 
     public void setCredentials() {
-        email = "test@gmail.com";
+        email = "1@gmail.com";
         password = "abc";
     }
 
