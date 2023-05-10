@@ -5,8 +5,7 @@
 For this project, we will be applying the concepts covered in Day 1 of the **_Programming Skills Bootcamp - Week 2_**. This includes an overview of the JavaScript programming language, its syntax, and key features, as well as an introduction to DOM manipulation for web development. We have also covered variables, data types, operators, and control flow in JavaScript. **_The project will be a real-world project mainly focusing on DOM_**.
 
 # Project Demo
-https://user-images.githubusercontent.com/108181763/234922395-57f8220f-053e-4fae-b48e-6a7cee9b4fe7.mp4
-
+https://github.com/Ishan3450/programming-skills-bootcamp/assets/108181763/26301a7a-aa07-4eb0-9f75-75c6b41c955c
 
 # Project Description
 
