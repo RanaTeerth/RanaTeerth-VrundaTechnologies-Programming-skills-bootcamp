@@ -38,7 +38,7 @@ class LoginSystem { // Create a class named LoginSystem.
 
 // Define a main method that creates an object of the LoginSystem.
 
-public class Project {
+public class ProjectofDay3 {
     public static void main(String[] args) {
         LoginSystem l1 = new LoginSystem();
 
